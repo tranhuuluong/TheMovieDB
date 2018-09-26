@@ -27,5 +27,7 @@ public interface AppComponent {
         AppComponent build();
     }
 
-    SplashActivityComponent getSplashActivityComponent();
+    SplashComponent getSplashActivityComponent();
+
+    MainComponent getMainComponent();
 }

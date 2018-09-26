@@ -4,7 +4,8 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.tranhuuluong.themoviedb.BuildConfig;
-import com.tranhuuluong.themoviedb.repository.http.RetrofitAppConfigHttpServices;
+import com.tranhuuluong.themoviedb.repository.http.RetrofitAppConfigHttpService;
+import com.tranhuuluong.themoviedb.repository.http.RetrofitMediaHttpService;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -73,7 +74,13 @@ public abstract class NetWorkModule {
 
     @Provides
     @Singleton
-    public static RetrofitAppConfigHttpServices providesRetrofitAppConfigHttpServices(Retrofit retrofit) {
-        return retrofit.create(RetrofitAppConfigHttpServices.class);
+    public static RetrofitAppConfigHttpService providesRetrofitAppConfigHttpServices(Retrofit retrofit) {
+        return retrofit.create(RetrofitAppConfigHttpService.class);
+    }
+
+    @Provides
+    @Singleton
+    public static RetrofitMediaHttpService providesRetrofitMediaHttpService(Retrofit retrofit) {
+        return retrofit.create(RetrofitMediaHttpService.class);
     }
 }

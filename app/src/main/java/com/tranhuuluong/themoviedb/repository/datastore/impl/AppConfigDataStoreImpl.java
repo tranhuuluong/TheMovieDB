@@ -1,7 +1,7 @@
 package com.tranhuuluong.themoviedb.repository.datastore.impl;
 
 import com.tranhuuluong.themoviedb.repository.datastore.AppConfigDataStore;
-import com.tranhuuluong.themoviedb.repository.http.RetrofitAppConfigHttpServices;
+import com.tranhuuluong.themoviedb.repository.http.RetrofitAppConfigHttpService;
 import com.tranhuuluong.themoviedb.repository.response.CountryEntity;
 import com.tranhuuluong.themoviedb.repository.response.ImageConfigResponse;
 
@@ -16,10 +16,10 @@ import retrofit2.Response;
  */
 
 public class AppConfigDataStoreImpl implements AppConfigDataStore {
-    private RetrofitAppConfigHttpServices retrofitAppconfigHttpServices;
+    private RetrofitAppConfigHttpService retrofitAppconfigHttpServices;
 
     @Inject
-    public AppConfigDataStoreImpl(RetrofitAppConfigHttpServices retrofitAppconfigHttpServices) {
+    public AppConfigDataStoreImpl(RetrofitAppConfigHttpService retrofitAppconfigHttpServices) {
         this.retrofitAppconfigHttpServices = retrofitAppconfigHttpServices;
     }
 

@@ -1,5 +1,6 @@
 package com.tranhuuluong.themoviedb.presentation.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -72,13 +73,15 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
 
     @Override
     public void goToMainScreen() {
-
+        finish();
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override
     public void onCountryPick(Country country) {
         chooseCountryDialog.dismiss();
         Toast.makeText(this, country.getCountryName(), Toast.LENGTH_SHORT).show();
-//        presenter.pickCountry(country);
+        presenter.pickCountry(country);
     }
 }

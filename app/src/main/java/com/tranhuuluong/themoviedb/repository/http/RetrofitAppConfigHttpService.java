@@ -12,7 +12,7 @@ import retrofit2.http.GET;
  * Created by luongtran on 9/25/18.
  */
 
-public interface RetrofitAppConfigHttpServices {
+public interface RetrofitAppConfigHttpService {
     @GET("configuration")
     Call<ImageConfigResponse> getImageConfig();
 

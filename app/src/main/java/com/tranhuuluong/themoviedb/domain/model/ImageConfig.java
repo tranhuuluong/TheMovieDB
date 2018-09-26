@@ -60,4 +60,8 @@ public class ImageConfig {
     public void setMapProfileSizes(Map<ImageSize, String> mapProfileSizes) {
         this.mapProfileSizes = mapProfileSizes;
     }
+
+    public String buildPosterUrl(String posterPath, ImageSize targetSize) {
+        return baseUrl + mapBackdropSizes.get(targetSize) + posterPath;
+    }
 }
