@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:layout_width="@dimen/splash_logo_size"
+        android:layout_height="@dimen/splash_logo_size"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_tmdb"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        style="@style/LoadingView"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="100dp"
+        android:visibility="gone"/>
+
+</FrameLayout>
