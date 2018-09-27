@@ -7,6 +7,9 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.tranhuuluong.themoviedb.R;
 import com.tranhuuluong.themoviedb.domain.model.Media;
@@ -25,6 +28,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements MainContract.View {
     @Bind(R.id.rv_upcoming)
     RecyclerView rvUpcoming;
+    @Bind(R.id.pb_loading)
+    ProgressBar pbLoading;
 
     @Inject
     MainContract.Presenter presenter;
@@ -48,17 +53,17 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void showLoading() {
-
+        pbLoading.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-
+        pbLoading.setVisibility(View.GONE);
     }
 
     @Override
     public void displayError() {
-
+        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -70,5 +75,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         rvUpcoming.setLayoutManager(linearLayoutManager);
         rvUpcoming.addItemDecoration(divider);
         rvUpcoming.setAdapter(adapter);
+        rvUpcoming.setVisibility(View.VISIBLE);
     }
 }

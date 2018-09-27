@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".presentation.activity.MainActivity"/>
+        <activity
+            android:name=".presentation.activity.MainActivity"
+            android:theme="@style/AppTheme"/>
 
         <activity
             android:name=".presentation.activity.SplashActivity"

@@ -24,9 +24,11 @@ public class MainPresenter extends BasePresenterImpl<MainContract.View> implemen
 
     @Override
     public void start() {
+        getView().showLoading();
         mediaUseCase.getUpComing(new ResponseListener<List<Media>>() {
             @Override
             public void onResponse(List<Media> response, Exception e) {
+                getView().hideLoading();
                 if (e == null) {
                     getView().onMediasRetrieve(response);
                 } else {

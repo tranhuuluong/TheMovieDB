@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
  */
 
 public class SplashActivity extends AppCompatActivity implements SplashContract.View, ChooseCountryDialog.OnCountryClickListener {
-    @Bind(R.id.pbLoading)
+    @Bind(R.id.pb_loading)
     View pbLoading;
 
     @Inject
